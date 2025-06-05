@@ -8,7 +8,9 @@ export const useAuth = () => useContext(AuthContext)
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+
+  // 💡 Set your deployed backend URL directly here
+  const apiUrl = 'https://moodmate-1-60ht.onrender.com/api'
 
   // Check if user is logged in on initial load
   useEffect(() => {
