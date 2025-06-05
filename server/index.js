@@ -8,9 +8,14 @@ import authRoutes from './routes/authRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import moodRoutes from './routes/moodRoutes.js'
 
-// Load environment variables
-dotenv.config()
-console.log("✅ MONGODB_URI:", process.env.MONGODB_URI) // Debug print to verify .env loaded
+// Extra lines to fix path for .env (for ES module)
+import path from 'path'
+import { fileURLToPath } from 'url'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+dotenv.config({ path: path.join(__dirname, '.env') }) // ✅ Ensure .env is loaded
+
+console.log("✅ MONGODB_URI:", process.env.MONGODB_URI) // Debug log
 
 // Initialize express app
 const app = express()
@@ -22,7 +27,7 @@ app.use(cookieParser())
 app.use(cors({
   origin: process.env.NODE_ENV === 'production'
     ? process.env.CLIENT_URL
-    : 'http://localhost:5173',  // Fix this to 5173
+    : 'http://localhost:5173',  // For development
   credentials: true
 }))
 
@@ -45,7 +50,7 @@ app.get('/api/health', (req, res) => {
 })
 
 // Global error handler
-app.use((err, req, res, next,process) => {
+app.use((err, req, res, next) => { // ❌ Removed wrong "process" parameter
   console.error(err.stack)
   res.status(500).json({
     message: 'Something went wrong!',
