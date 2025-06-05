@@ -1,0 +1,123 @@
+.mood-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-section-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-1);
+}
+
+.mood-selector {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+}
+
+.mood-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mood-option:hover {
+  background-color: var(--color-primary-50);
+}
+
+.mood-option.selected {
+  background-color: var(--color-primary-100);
+}
+
+.mood-emoji {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-1);
+  transition: transform var(--transition-normal);
+}
+
+.mood-emoji:hover {
+  transform: scale(1.2);
+}
+
+.mood-emoji.selected {
+  animation: pulse 2s infinite;
+}
+
+.mood-label {
+  font-size: 0.875rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--space-2);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  resize: vertical;
+  font-family: var(--font-family);
+  transition: border-color var(--transition-fast);
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.form-error {
+  color: var(--color-error-500);
+  font-size: 0.875rem;
+  margin-top: var(--space-1);
+}
+
+.form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  background-color: var(--color-primary-500);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.form-submit:hover {
+  background-color: var(--color-primary-600);
+}
+
+@media (max-width: 768px) {
+  .mood-selector {
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    justify-content: space-around;
+  }
+  
+  .mood-option {
+    width: 18%;
+    padding: var(--space-1);
+  }
+  
+  .mood-emoji {
+    font-size: 2rem;
+  }
+  
+  .mood-label {
+    font-size: 0.75rem;
+  }
+}

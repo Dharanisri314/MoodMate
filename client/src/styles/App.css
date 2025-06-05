@@ -1,0 +1,171 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--space-4) 0;
+}
+
+/* Auth Pages Styling */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-neutral-100) 100%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--space-4);
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--space-3);
+}
+
+.auth-logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary-500);
+  margin-bottom: var(--space-1);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--color-neutral-700);
+}
+
+.auth-submit {
+  margin-top: var(--space-2);
+  padding: var(--space-2);
+  font-weight: 600;
+}
+
+.auth-footer {
+  margin-top: var(--space-3);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-neutral-600);
+}
+
+/* Dashboard */
+.dashboard-header {
+  margin-bottom: var(--space-4);
+}
+
+.dashboard-greeting {
+  margin-bottom: var(--space-1);
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.dashboard-card {
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  background-color: white;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-600);
+}
+
+.card-title {
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Mood Tracker */
+.mood-tracker-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mood-selector {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.mood-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform var(--transition-normal);
+}
+
+.mood-emoji {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-1);
+}
+
+.mood-label {
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .mood-selector {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .mood-option {
+    width: 18%;
+  }
+  
+  .mood-emoji {
+    font-size: 2rem;
+  }
+}

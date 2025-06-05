@@ -1,0 +1,136 @@
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary-500);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.navbar-link {
+  color: var(--color-neutral-700);
+  font-weight: 500;
+  padding: var(--space-1);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.navbar-link:hover {
+  color: var(--color-primary-600);
+  background-color: var(--color-primary-50);
+}
+
+.navbar-link.active {
+  color: var(--color-primary-600);
+  background-color: var(--color-primary-100);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+  background-color: var(--color-neutral-50);
+}
+
+.navbar-user-icon {
+  color: var(--color-primary-500);
+}
+
+.navbar-username {
+  font-weight: 500;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar-logout {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-neutral-700);
+  background-color: transparent;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.navbar-logout:hover {
+  color: var(--color-error-500);
+  background-color: var(--color-neutral-100);
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  color: var(--color-neutral-700);
+  font-size: 1.5rem;
+  padding: var(--space-1);
+}
+
+.navbar-toggle:hover {
+  background: none;
+  color: var(--color-primary-600);
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-wrap: wrap;
+  }
+  
+  .navbar-toggle {
+    display: block;
+  }
+  
+  .navbar-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin-top: var(--space-2);
+  }
+  
+  .navbar-menu.active {
+    display: flex;
+  }
+  
+  .navbar-link {
+    display: block;
+    padding: var(--space-2);
+  }
+  
+  .navbar-actions {
+    margin-left: auto;
+  }
+  
+  .navbar-logout-text {
+    display: none;
+  }
+}

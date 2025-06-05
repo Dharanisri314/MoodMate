@@ -1,0 +1,52 @@
+.mood-tracker-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-3) 0;
+}
+
+.page-header {
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.page-title {
+  margin-bottom: var(--space-1);
+}
+
+.page-description {
+  color: var(--color-neutral-600);
+}
+
+.mood-form-card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-4);
+}
+
+.success-message {
+  background-color: var(--color-success-500);
+  color: white;
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  animation: fadeIn var(--transition-normal);
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-2);
+}
+
+.error-message {
+  background-color: var(--color-error-500);
+  color: white;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
