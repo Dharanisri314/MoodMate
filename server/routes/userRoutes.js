@@ -17,3 +17,4 @@ router.put('/me', userController.updateProfile)
 router.put('/password', userController.updatePassword)
 
 export default router
+

@@ -31,6 +31,7 @@ app.use(cors({
   credentials: true
 }))
 
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
@@ -62,5 +63,3 @@ app.use((err, req, res, next) => { // ❌ Removed wrong "process" parameter
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`)
 })
-
-
